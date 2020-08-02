@@ -39,19 +39,19 @@ public class TaskController {
         model.addAttribute("studentList",studentList);
         model.addAttribute("count",count);
         model.addAttribute("number",number);
-        return "student";
+        return "myView";
     }
 
     @RequestMapping(value = "profession",method = RequestMethod.GET)
     public String getProfession(Model model){
         List<Position> professionsList = positionService.selectPosition();
         model.addAttribute("profession",professionsList);
-        return "profession";
+        return "myView2";
     }
 
-    @RequestMapping("/test")
+    /*@RequestMapping("/test")
     public String testView(){
         return "myView";
-    }
+    }*/
 }
 

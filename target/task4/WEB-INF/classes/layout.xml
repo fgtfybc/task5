@@ -9,8 +9,14 @@
     <!-- 主布局 -->
     <!-- 项目 -->
     <definition name="myView" extends="layout">
-        <put-attribute name="a" value="/WEB-INF/jsp/a.jsp" />
-        <put-attribute name="b" value="/WEB-INF/jsp/b.jsp" />
+        <put-attribute name="head" value="/WEB-INF/jsp/head.jsp" />
+        <put-attribute name="body" value="/WEB-INF/jsp/body1.jsp" />
+        <put-attribute name="footer" value="/WEB-INF/jsp/footer.jsp" />
     </definition>
     <!--项目-->
+    <definition name="myView2" extends="layout">
+        <put-attribute name="head" value="/WEB-INF/jsp/head.jsp" />
+        <put-attribute name="body" value="/WEB-INF/jsp/body2.jsp" />
+        <put-attribute name="footer" value="/WEB-INF/jsp/footer.jsp" />
+    </definition>
 </tiles-definitions>

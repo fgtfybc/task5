@@ -2,6 +2,7 @@
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %>
 <%@ taglib uri="http://tiles.apache.org/tags-tiles-extras" prefix="tilesx" %>
 <div>
-    <tiles:insertAttribute name="a" />
-    <tiles:insertAttribute name="b" />
+    <tiles:insertAttribute name="head" />
+    <tiles:insertAttribute name="body" />
+    <tiles:insertAttribute name="footer" />
 </div>
