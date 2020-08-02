@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jnshu.dao.PositionMapper">
+  <resultMap id="BaseResultMap" type="com.jnshu.pojo.Position">
+    <constructor>
+      <idArg column="id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="img" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="content" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="name" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="intro" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="threshold" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="difficulty" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="cycle" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="scarcity" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="payfirst" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="paysecond" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="paythirdly" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="basics" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="createat" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="createby" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="updateat" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="updateby" javaType="java.lang.String" jdbcType="VARCHAR" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, img, content, name, intro, threshold, difficulty, cycle, scarcity, payfirst, 
+    paysecond, paythirdly, basics, createat, createby, updateat, updateby
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from position
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+
+  <select id="selectPosition" resultType="com.jnshu.pojo.Position">
+        select * from position
+  </select>
+
+
+
+
+
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from position
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.jnshu.pojo.Position">
+    insert into position (id, img, content, 
+      name, intro, threshold, 
+      difficulty, cycle, scarcity, 
+      payfirst, paysecond, paythirdly, 
+      basics, createat, createby, 
+      updateat, updateby)
+    values (#{id,jdbcType=BIGINT}, #{img,jdbcType=VARCHAR}, #{content,jdbcType=VARCHAR}, 
+      #{name,jdbcType=VARCHAR}, #{intro,jdbcType=VARCHAR}, #{threshold,jdbcType=INTEGER}, 
+      #{difficulty,jdbcType=INTEGER}, #{cycle,jdbcType=VARCHAR}, #{scarcity,jdbcType=INTEGER}, 
+      #{payfirst,jdbcType=INTEGER}, #{paysecond,jdbcType=INTEGER}, #{paythirdly,jdbcType=INTEGER}, 
+      #{basics,jdbcType=VARCHAR}, #{createat,jdbcType=BIGINT}, #{createby,jdbcType=VARCHAR}, 
+      #{updateat,jdbcType=BIGINT}, #{updateby,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.jnshu.pojo.Position">
+    insert into position
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="img != null">
+        img,
+      </if>
+      <if test="content != null">
+        content,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="intro != null">
+        intro,
+      </if>
+      <if test="threshold != null">
+        threshold,
+      </if>
+      <if test="difficulty != null">
+        difficulty,
+      </if>
+      <if test="cycle != null">
+        cycle,
+      </if>
+      <if test="scarcity != null">
+        scarcity,
+      </if>
+      <if test="payfirst != null">
+        payfirst,
+      </if>
+      <if test="paysecond != null">
+        paysecond,
+      </if>
+      <if test="paythirdly != null">
+        paythirdly,
+      </if>
+      <if test="basics != null">
+        basics,
+      </if>
+      <if test="createat != null">
+        createat,
+      </if>
+      <if test="createby != null">
+        createby,
+      </if>
+      <if test="updateat != null">
+        updateat,
+      </if>
+      <if test="updateby != null">
+        updateby,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="img != null">
+        #{img,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null">
+        #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="intro != null">
+        #{intro,jdbcType=VARCHAR},
+      </if>
+      <if test="threshold != null">
+        #{threshold,jdbcType=INTEGER},
+      </if>
+      <if test="difficulty != null">
+        #{difficulty,jdbcType=INTEGER},
+      </if>
+      <if test="cycle != null">
+        #{cycle,jdbcType=VARCHAR},
+      </if>
+      <if test="scarcity != null">
+        #{scarcity,jdbcType=INTEGER},
+      </if>
+      <if test="payfirst != null">
+        #{payfirst,jdbcType=INTEGER},
+      </if>
+      <if test="paysecond != null">
+        #{paysecond,jdbcType=INTEGER},
+      </if>
+      <if test="paythirdly != null">
+        #{paythirdly,jdbcType=INTEGER},
+      </if>
+      <if test="basics != null">
+        #{basics,jdbcType=VARCHAR},
+      </if>
+      <if test="createat != null">
+        #{createat,jdbcType=BIGINT},
+      </if>
+      <if test="createby != null">
+        #{createby,jdbcType=VARCHAR},
+      </if>
+      <if test="updateat != null">
+        #{updateat,jdbcType=BIGINT},
+      </if>
+      <if test="updateby != null">
+        #{updateby,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.jnshu.pojo.Position">
+    update position
+    <set>
+      <if test="img != null">
+        img = #{img,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null">
+        content = #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="intro != null">
+        intro = #{intro,jdbcType=VARCHAR},
+      </if>
+      <if test="threshold != null">
+        threshold = #{threshold,jdbcType=INTEGER},
+      </if>
+      <if test="difficulty != null">
+        difficulty = #{difficulty,jdbcType=INTEGER},
+      </if>
+      <if test="cycle != null">
+        cycle = #{cycle,jdbcType=VARCHAR},
+      </if>
+      <if test="scarcity != null">
+        scarcity = #{scarcity,jdbcType=INTEGER},
+      </if>
+      <if test="payfirst != null">
+        payfirst = #{payfirst,jdbcType=INTEGER},
+      </if>
+      <if test="paysecond != null">
+        paysecond = #{paysecond,jdbcType=INTEGER},
+      </if>
+      <if test="paythirdly != null">
+        paythirdly = #{paythirdly,jdbcType=INTEGER},
+      </if>
+      <if test="basics != null">
+        basics = #{basics,jdbcType=VARCHAR},
+      </if>
+      <if test="createat != null">
+        createat = #{createat,jdbcType=BIGINT},
+      </if>
+      <if test="createby != null">
+        createby = #{createby,jdbcType=VARCHAR},
+      </if>
+      <if test="updateat != null">
+        updateat = #{updateat,jdbcType=BIGINT},
+      </if>
+      <if test="updateby != null">
+        updateby = #{updateby,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.jnshu.pojo.Position">
+    update position
+    set img = #{img,jdbcType=VARCHAR},
+      content = #{content,jdbcType=VARCHAR},
+      name = #{name,jdbcType=VARCHAR},
+      intro = #{intro,jdbcType=VARCHAR},
+      threshold = #{threshold,jdbcType=INTEGER},
+      difficulty = #{difficulty,jdbcType=INTEGER},
+      cycle = #{cycle,jdbcType=VARCHAR},
+      scarcity = #{scarcity,jdbcType=INTEGER},
+      payfirst = #{payfirst,jdbcType=INTEGER},
+      paysecond = #{paysecond,jdbcType=INTEGER},
+      paythirdly = #{paythirdly,jdbcType=INTEGER},
+      basics = #{basics,jdbcType=VARCHAR},
+      createat = #{createat,jdbcType=BIGINT},
+      createby = #{createby,jdbcType=VARCHAR},
+      updateat = #{updateat,jdbcType=BIGINT},
+      updateby = #{updateby,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

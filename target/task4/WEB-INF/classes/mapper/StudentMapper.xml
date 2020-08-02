@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jnshu.dao.StudentMapper">
+  <resultMap id="BaseResultMap" type="com.jnshu.pojo.Student">
+    <constructor>
+      <idArg column="id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="name" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="position" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="state" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="work" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="intro" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="profession" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="createat" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="createby" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="updateat" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="updateby" javaType="java.lang.String" jdbcType="VARCHAR" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, name, position, state, work, intro, profession, createat, createby, updateat, 
+    updateby
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from student
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from student
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.jnshu.pojo.Student">
+    insert into student (id, name, position, 
+      state, work, intro, 
+      profession, createat, createby, 
+      updateat, updateby)
+    values (#{id,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, #{position,jdbcType=VARCHAR}, 
+      #{state,jdbcType=INTEGER}, #{work,jdbcType=INTEGER}, #{intro,jdbcType=VARCHAR}, 
+      #{profession,jdbcType=VARCHAR}, #{createat,jdbcType=BIGINT}, #{createby,jdbcType=VARCHAR}, 
+      #{updateat,jdbcType=BIGINT}, #{updateby,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.jnshu.pojo.Student">
+    insert into student
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="position != null">
+        position,
+      </if>
+      <if test="state != null">
+        state,
+      </if>
+      <if test="work != null">
+        work,
+      </if>
+      <if test="intro != null">
+        intro,
+      </if>
+      <if test="profession != null">
+        profession,
+      </if>
+      <if test="createat != null">
+        createat,
+      </if>
+      <if test="createby != null">
+        createby,
+      </if>
+      <if test="updateat != null">
+        updateat,
+      </if>
+      <if test="updateby != null">
+        updateby,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="position != null">
+        #{position,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null">
+        #{state,jdbcType=INTEGER},
+      </if>
+      <if test="work != null">
+        #{work,jdbcType=INTEGER},
+      </if>
+      <if test="intro != null">
+        #{intro,jdbcType=VARCHAR},
+      </if>
+      <if test="profession != null">
+        #{profession,jdbcType=VARCHAR},
+      </if>
+      <if test="createat != null">
+        #{createat,jdbcType=BIGINT},
+      </if>
+      <if test="createby != null">
+        #{createby,jdbcType=VARCHAR},
+      </if>
+      <if test="updateat != null">
+        #{updateat,jdbcType=BIGINT},
+      </if>
+      <if test="updateby != null">
+        #{updateby,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.jnshu.pojo.Student">
+    update student
+    <set>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="position != null">
+        position = #{position,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null">
+        state = #{state,jdbcType=INTEGER},
+      </if>
+      <if test="work != null">
+        work = #{work,jdbcType=INTEGER},
+      </if>
+      <if test="intro != null">
+        intro = #{intro,jdbcType=VARCHAR},
+      </if>
+      <if test="profession != null">
+        profession = #{profession,jdbcType=VARCHAR},
+      </if>
+      <if test="createat != null">
+        createat = #{createat,jdbcType=BIGINT},
+      </if>
+      <if test="createby != null">
+        createby = #{createby,jdbcType=VARCHAR},
+      </if>
+      <if test="updateat != null">
+        updateat = #{updateat,jdbcType=BIGINT},
+      </if>
+      <if test="updateby != null">
+        updateby = #{updateby,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.jnshu.pojo.Student">
+    update student
+    set name = #{name,jdbcType=VARCHAR},
+      position = #{position,jdbcType=VARCHAR},
+      state = #{state,jdbcType=INTEGER},
+      work = #{work,jdbcType=INTEGER},
+      intro = #{intro,jdbcType=VARCHAR},
+      profession = #{profession,jdbcType=VARCHAR},
+      createat = #{createat,jdbcType=BIGINT},
+      createby = #{createby,jdbcType=VARCHAR},
+      updateat = #{updateat,jdbcType=BIGINT},
+      updateby = #{updateby,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+
+  <select id="selectStudent"  parameterType="Boolean" resultType="Student">
+    select * from student where state = true
+  </select>
+
+  <select id="selectByLearning" resultType="int">
+    select max(id) from student
+  </select>
+
+  <select id="selectByWorking" resultType="int">
+    select count(*) from student where work =true
+  </select>
+
+</mapper>
