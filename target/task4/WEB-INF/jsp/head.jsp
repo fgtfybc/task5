@@ -21,6 +21,7 @@
 <header>
     <div class="top container">
         <p class="hidden-xs">客服热线：010-594-78634</p>
+        <a href="/logout">注销</a>
         <img src="../imges/12321.gif">
     </div>
 
@@ -47,9 +48,7 @@
                 </ul>
             </div>
         </div>
-
     </div>
-
 </header>
 </body>
 </html>

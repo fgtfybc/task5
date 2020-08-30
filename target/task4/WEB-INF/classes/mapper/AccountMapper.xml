@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jnshu.dao.AccoutMapper">
+    <select id="login" resultType="com.jnshu.pojo.Account">
+        select * from Account where username = #{username}
+    </select>
+
+    <insert id="register" parameterType="com.jnshu.pojo.Account">
+        insert into Account (username,password) values (#{username},#{password})
+    </insert>
+
+    <insert id="insert" parameterType="com.jnshu.pojo.Account">
+    insert into Account (id, username, password, createat, createby,
+      updateat, updateby)
+    values (#{id,jdbcType=BIGINT}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, #{createat,jdbcType=BIGINT}, #{createby,jdbcType=VARCHAR},
+      #{updateat,jdbcType=BIGINT}, #{updateby,jdbcType=VARCHAR})
+    </insert>
+    <select id="selectByName" resultType="com.jnshu.pojo.Account">
+        select * from account where username=#{username};
+    </select>
+    <select id="selectByAccount" resultType="com.jnshu.pojo.Account">
+        select * from Account where username = #{username} and password = #{password};
+    </select>
+    <select id="selectAccount" parameterType="String" resultType="Account">
+        select * from account where username = #{username};
+    </select>
+    <select id="select" parameterType="com.jnshu.pojo.Account" resultType="com.jnshu.pojo.Account">
+        select * from account where username =#{username} and password=#{password};
+    </select>
+
+    <select id="findById" resultType="com.jnshu.pojo.Account">
+        select * from account where id = #{id}
+    </select>
+
+   <!-- <select id="select" parameterType="Account" resultType="Account">
+        select * from Account
+        <where>
+            <if test="id != null">
+                id = #{id,jdbcType=BIGINT}
+            </if>
+            <if test="username != null">
+                and username = #{username,jdbcType=VARCHAR}
+            </if>
+            <if test="password != null">
+                and password = #{password,jdbcType=VARCHAR}
+            </if>
+        </where>
+    </select>
+    <select id="selectAccount" parameterType="String" resultType="Account">
+        select * from Account where username = #{username}
+    </select>-->
+</mapper>

@@ -43,5 +43,7 @@
         <!-- 给出需要扫描Dao接口包 -->
         <property name="basePackage" value="com.jnshu.dao"/>
     </bean>
-
+<!--
+    shiro
+    <bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean"></bean>-->
 </beans>

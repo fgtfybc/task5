@@ -8,9 +8,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>我是a</title>
+    <title>注销</title>
 </head>
 <body>
-1
+<% System.out.println("注销。。。");%>
+注销成功
 </body>
 </html>

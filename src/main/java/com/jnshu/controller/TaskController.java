@@ -26,7 +26,7 @@ public class TaskController {
     @Autowired
     private PositionService positionService;
 
-    @RequestMapping(value = "student",method = RequestMethod.GET)
+    @RequestMapping(value = "/a/student",method = RequestMethod.GET)
     public String getIndex(Model model){
         //查询优秀学员
         List<Student> studentList = studentService.selectStudent();
@@ -42,7 +42,7 @@ public class TaskController {
         return "myView";
     }
 
-    @RequestMapping(value = "profession",method = RequestMethod.GET)
+    @RequestMapping(value = "/a/profession",method = RequestMethod.GET)
     public String getProfession(Model model){
         List<Position> professionsList = positionService.selectPosition();
         model.addAttribute("profession",professionsList);
@@ -53,5 +53,6 @@ public class TaskController {
     public String testView(){
         return "myView";
     }*/
+
 }
 

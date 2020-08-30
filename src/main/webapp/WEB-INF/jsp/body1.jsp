@@ -12,10 +12,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>无标题文档</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="${pageContext.request.contextPath}css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="../bootstrap-3.3.5-dist/css/bootstrap.css">
-    <link href="css/Untitled-3.css" rel="stylesheet" type="text/css">
-    <link href="css/Untitled-1base.css" rel="stylesheet" type="text/css">
+    <link href="${pageContext.request.contextPath}/css/Untitled-3.css" rel="stylesheet" type="text/css">
+    <link href="${pageContext.request.contextPath}/css/Untitled-1base.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 <div id="myCarousel" class="carousel slide">
@@ -27,22 +27,22 @@
     </ol>
     <div class="carousel-inner">
         <div class="item active">
-            <img alt="First slide" src="imges/547567.jpg">
+            <img alt="First slide" src="${pageContext.request.contextPath}/imges/547567.jpg">
         </div>
         <div class="item">
-            <img alt="Second slide" src="imges/547567.jpg">
+            <img alt="Second slide" src="${pageContext.request.contextPath}/imges/547567.jpg">
         </div>
         <div class="item">
-            <img alt="Third slide" src="imges/547567.jpg">
+            <img alt="Third slide" src="${pageContext.request.contextPath}/imges/547567.jpg">
         </div>
         <div class="item">
-            <img alt="Third slide" src="imges/547567.jpg">
+            <img alt="Third slide" src="${pageContext.request.contextPath}/imges/547567.jpg">
         </div>
         <a data-slide="prev" href="#myCarousel" class="carousel-control left">
-            <i class="icon-left"><img src="imges/54354.png"></i>
+            <i class="icon-left"><img src="${pageContext.request.contextPath}/imges/54354.png"></i>
         </a>
         <a data-slide="next" href="#myCarousel" class="carousel-control right">
-            <i class="icon-right"><img src="imges/4525424.png"></i>
+            <i class="icon-right"><img src="${pageContext.request.contextPath}/imges/4525424.png"></i>
         </a>
     </div>
 </div>
@@ -55,7 +55,7 @@
             <div class="row text-center">
                 <ul class="list-unstyled">
                     <li class="col-xs-12 up-1">
-                        <img alt="" src="imges/45354312.png">
+                        <img alt="" src="${pageContext.request.contextPath}/imges/45354312.png">
                     </li>
                     <li class="up-2 col-xs-12">高效</li>
                     <li class="up-3 col-xs-12">将三到七年的成长时间,缩短到一年到两年</li>
@@ -67,7 +67,7 @@
             <div class="row text-center">
                 <ul class="list-unstyled">
                     <li class="col-xs-12 up-1">
-                        <img alt="" src="imges/879789.png">
+                        <img alt="" src="${pageContext.request.contextPath}/imges/879789.png">
                     </li>
                     <li class="up-2 col-xs-12">规范</li>
                     <li class="up-3 col-xs-12">标准到实战教程,不会走弯路</li>
@@ -79,7 +79,7 @@
             <div class="row text-center">
                 <ul class="list-unstyled">
                     <li class="col-xs-12 up-1">
-                        <img alt="" src="imges/786453654365.png">
+                        <img alt="" src="${pageContext.request.contextPath}/imges/786453654365.png">
                     </li>
                     <li class="up-2 col-xs-12">人脉</li>
                     <li class="up-3 col-xs-12">同班好友,同院学长,技术大师,入学就混职脉圈,为以后铺平道路</li>
@@ -89,11 +89,11 @@
 
         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3 text-center">
             <p>
-                <img src="imges/453254312.png">${count}<br>
+                <img src="${pageContext.request.contextPath}/imges/453254312.png">${count}<br>
                 <span class="up-3">累计在线学习人数</span>
             </p>
             <p>
-                <img src="imges/453254312.png">${number}<br>
+                <img src="${pageContext.request.contextPath}/imges/453254312.png">${number}<br>
                 <span class="up-3">学员已经找到满意工作</span>
             </p>
         </div>
@@ -152,14 +152,14 @@
         <ul class="list-unstyled text-center">
             <li class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
                 <div>
-                    <img src="imges/${studentList.get(0).intro}.png">
+                    <img src="${pageContext.request.contextPath}/imges/${studentList.get(0).intro}.png">
                     <span>${studentList.get(0).position}:${studentList.get(0).name}</span>
                     <p class="text-left">${studentList.get(0).position}</p>
                 </div>
             </li>
             <li class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
                 <div>
-                    <img src="imges/242424.png">
+                    <img src="${pageContext.request.contextPath}/imges/242424.png">
                     <span>技术顾问:罗大佑</span>
                     <p class="text-left">
                         百度技术总监：互联网基础服务领域，从事虚拟主机，云主机，域名。
@@ -168,7 +168,7 @@
             </li>
             <li class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
                 <div>
-                    <img src="imges/242424.png">
+                    <img src="${pageContext.request.contextPath}/imges/242424.png">
                     <span>技术顾问:罗大佑</span>
                     <p class="text-left">百度技术总监：互联网基础服务领域，从事虚拟主机，云主机，域名。
                         曾任新网高级技术经理，负责技术研发，团队管理与建设。</p>
@@ -176,7 +176,7 @@
             </li>
             <li class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
                 <div>
-                    <img src="imges/242424.png">
+                    <img src="${pageContext.request.contextPath}/imges/242424.png">
                     <span>技术顾问:罗大佑</span>
                     <p class="text-left">百度技术总监：互联网基础服务领域，从事虚拟主机，云主机，域名。
                         曾任新网高级技术经理，负责技术研发，团队管理与建设。</p>
@@ -191,19 +191,19 @@
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <ul class="logo">
                 <li>
-                    <a href=""><img src="imges/123132.png"></a>
+                    <a href=""><img src="${pageContext.request.contextPath}/imges/123132.png"></a>
                 </li>
                 <li>
-                    <a href=""> <img src="imges/1549865.png"></a>
+                    <a href=""> <img src="${pageContext.request.contextPath}/imges/1549865.png"></a>
                 </li>
                 <li>
-                    <a href=""> <img src="imges/785345.png"></a>
+                    <a href=""> <img src="${pageContext.request.contextPath}/imges/785345.png"></a>
                 </li>
                 <li>
-                    <a href=""> <img src="imges/1471.png"></a>
+                    <a href=""> <img src="${pageContext.request.contextPath}/imges/1471.png"></a>
                 </li>
                 <li>
-                    <a href="">  <img src="imges/7861.png"></a>
+                    <a href="">  <img src="${pageContext.request.contextPath}/imges/7861.png"></a>
                 </li>
             </ul>
         </div>

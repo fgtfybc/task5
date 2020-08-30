@@ -23,11 +23,11 @@
     </constructor>
   </resultMap>
   <sql id="Base_Column_List">
-    id, img, content, name, intro, threshold, difficulty, cycle, scarcity, payfirst, 
+    id, img, content, name, intro, threshold, difficulty, cycle, scarcity, payfirst,
     paysecond, paythirdly, basics, createat, createby, updateat, updateby
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
-    select 
+    select
     <include refid="Base_Column_List" />
     from position
     where id = #{id,jdbcType=BIGINT}
@@ -46,17 +46,17 @@
     where id = #{id,jdbcType=BIGINT}
   </delete>
   <insert id="insert" parameterType="com.jnshu.pojo.Position">
-    insert into position (id, img, content, 
-      name, intro, threshold, 
-      difficulty, cycle, scarcity, 
-      payfirst, paysecond, paythirdly, 
-      basics, createat, createby, 
+    insert into position (id, img, content,
+      name, intro, threshold,
+      difficulty, cycle, scarcity,
+      payfirst, paysecond, paythirdly,
+      basics, createat, createby,
       updateat, updateby)
-    values (#{id,jdbcType=BIGINT}, #{img,jdbcType=VARCHAR}, #{content,jdbcType=VARCHAR}, 
-      #{name,jdbcType=VARCHAR}, #{intro,jdbcType=VARCHAR}, #{threshold,jdbcType=INTEGER}, 
-      #{difficulty,jdbcType=INTEGER}, #{cycle,jdbcType=VARCHAR}, #{scarcity,jdbcType=INTEGER}, 
-      #{payfirst,jdbcType=INTEGER}, #{paysecond,jdbcType=INTEGER}, #{paythirdly,jdbcType=INTEGER}, 
-      #{basics,jdbcType=VARCHAR}, #{createat,jdbcType=BIGINT}, #{createby,jdbcType=VARCHAR}, 
+    values (#{id,jdbcType=BIGINT}, #{img,jdbcType=VARCHAR}, #{content,jdbcType=VARCHAR},
+      #{name,jdbcType=VARCHAR}, #{intro,jdbcType=VARCHAR}, #{threshold,jdbcType=INTEGER},
+      #{difficulty,jdbcType=INTEGER}, #{cycle,jdbcType=VARCHAR}, #{scarcity,jdbcType=INTEGER},
+      #{payfirst,jdbcType=INTEGER}, #{paysecond,jdbcType=INTEGER}, #{paythirdly,jdbcType=INTEGER},
+      #{basics,jdbcType=VARCHAR}, #{createat,jdbcType=BIGINT}, #{createby,jdbcType=VARCHAR},
       #{updateat,jdbcType=BIGINT}, #{updateby,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.jnshu.pojo.Position">

@@ -6,9 +6,9 @@
 </head>
 <body>
 
-<a href="student">主页</a>
-<a href="profession">t11</a>
-<a href="/task4/logout">注销</a><br>
+<a href="tologin">登录</a>
+<a href="toregister">注册</a>
+<a href="logout">注销</a><br>
 
 </body>
 </html>
